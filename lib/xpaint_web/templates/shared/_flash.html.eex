@@ -1,0 +1,6 @@
+<%= for msg_type <- [:error, :info] do %>
+  <%= render_if get_flash(@conn, msg_type), fn msg -> %>
+    <p class="alert <%= alert_css_class(msg_type) %>" role="alert"><%= msg %></p>
+  <% end %>
+<% end %>
+
